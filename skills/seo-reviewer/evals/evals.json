@@ -1,0 +1,38 @@
+{
+  "skill_name": "seo-reviewer",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Audit the SEO for https://example.com as if it were our SaaS homepage. I care most about technical SEO, snippets, and what to fix before we run paid traffic to it.",
+      "expected_output": "A prioritized SEO audit that states live-site limitations, separates confirmed observations from assumptions, checks indexability and metadata first, and gives actionable fixes instead of a generic checklist.",
+      "files": [],
+      "expectations": [
+        "The report includes an explicit scope or limitations statement.",
+        "Findings are prioritized by severity or expected SEO impact.",
+        "Each major issue includes evidence, why it matters, and a recommended fix."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Review the SEO implementation in my Next.js app before launch. The homepage is app/page.tsx, metadata is in app/layout.tsx, and we have app/robots.ts plus app/sitemap.ts. Focus on framework-specific problems and code-level fixes.",
+      "expected_output": "A source-code-oriented SEO review that looks for Next.js metadata, robots, sitemap, canonical, structured data, rendering, image, and route issues without claiming deployed behavior.",
+      "files": [],
+      "expectations": [
+        "The output avoids claiming live deployment behavior unless a live URL is provided.",
+        "The output checks Next.js-specific SEO mechanisms such as metadata, robots.ts, sitemap.ts, and rendering mode.",
+        "Recommended fixes include implementation notes or code-oriented guidance."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Can you review this product page HTML for ecommerce SEO and AI search readiness? I want to know if the title, headings, schema, product details, trust signals, and page structure are good enough to rank.",
+      "expected_output": "A product-page SEO review that covers metadata, headings, Product/Breadcrumb schema, content depth, trust signals, internal links, accessibility, and AI-search readability.",
+      "files": [],
+      "expectations": [
+        "The output evaluates ecommerce-specific schema and trust signals.",
+        "The output includes AI search readiness criteria without treating them as a separate generic checklist.",
+        "The final roadmap orders fixes from highest impact to lowest impact."
+      ]
+    }
+  ]
+}
