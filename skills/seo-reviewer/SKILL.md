@@ -1,6 +1,7 @@
 ---
 name: seo-reviewer
 description: Review websites, landing pages, web apps, and source code for SEO. Use this skill whenever the user asks for an SEO audit, technical SEO review, ranking improvement, pre-launch SEO QA, Core Web Vitals review, metadata/schema/canonical/robots/sitemap checks, AI search readiness, or framework SEO for Next.js, React, Vue, Nuxt, Astro, Remix, or static sites, even if they only say "review this page" in an SEO context.
+license: MIT
 ---
 
 # SEO Reviewer
@@ -17,6 +18,13 @@ First determine what evidence is available:
 - No target: ask for a URL, repo path, page file, or HTML sample before auditing.
 
 When the audit scope is broad or the page is complex, read `references/audit-checklist.md` and use only the sections relevant to the target.
+
+If you need a quick machine-readable snapshot of a live URL or HTML file and no richer browser tooling is available, run `scripts/seo_snapshot.py` with `python3`. Use the script output as evidence, not as a replacement for judgment.
+
+```bash
+python3 scripts/seo_snapshot.py https://example.com
+python3 scripts/seo_snapshot.py ./page.html
+```
 
 ## Evidence Rules
 

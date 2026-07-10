@@ -10,11 +10,15 @@ The repo currently includes a local `seo-reviewer` skill and supporting files. T
 .
 ├── skills/
 │   └── seo-reviewer/
+│       ├── LICENSE
 │       ├── SKILL.md
 │       ├── evals/
 │       │   └── evals.json
-│       └── references/
-│           └── audit-checklist.md
+│       ├── references/
+│       │   └── audit-checklist.md
+│       └── scripts/
+│           └── seo_snapshot.py
+├── LICENSE
 ├── skills-lock.json
 └── README.md
 ```
@@ -75,6 +79,13 @@ Its test prompts are in:
 
 ```text
 skills/seo-reviewer/evals/evals.json
+```
+
+It also includes a small standard-library helper script for extracting a basic SEO evidence snapshot from a URL or HTML file:
+
+```bash
+python3 skills/seo-reviewer/scripts/seo_snapshot.py https://example.com
+python3 skills/seo-reviewer/scripts/seo_snapshot.py ./page.html
 ```
 
 ## Using a Skill with Codex
@@ -161,6 +172,10 @@ Then use the local skill-creator viewer to review outputs and benchmark results.
 `skills-lock.json` records external skill sources and hashes used in this workspace. It is useful for tracking where installed skills came from, but the actual local skill source in this repo lives under `skills/`.
 
 If you add or update external skills, refresh the lock file using the same tool or workflow that installed those skills.
+
+## License
+
+This repository is released under the MIT License. The `seo-reviewer` skill folder also includes its own MIT `LICENSE` file so the skill remains clearly licensed if copied or packaged separately.
 
 ## Development Notes
 
